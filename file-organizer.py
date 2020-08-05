@@ -11,6 +11,9 @@ IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.gif', '.png']
 PDF_EXTENSIONS = ['.pdf']
 ISOS_EXTENSIONS = ['.iso']
 IGNORED_EXTENSIONS = ['.crdownload']
+COMPRESSED_EXTENSIONS = ['.zip', '.tar']
+AUDIO_EXTENSIONS = ['.m4a', '.flac', '.mp3', '.wav', '.wma', '.aac']
+VIDEO_EXTENSIONS = ['.avi', '.mp4', '.mov']
 
 folder_to_track = '/home/ale/Descargas'
 
@@ -30,6 +33,12 @@ class MyHandler(FileSystemEventHandler):
                 elif checkFileType(file_extension, ISOS_EXTENSIONS):
                     new_destination = getNewDestination(
                         '/Isos', folder_to_track, fileName, file_extension)
+                elif checkFileType(file_extension, AUDIO_EXTENSIONS):
+                    new_destination = getNewDestination(
+                        '/Audios', folder_to_track, fileName, file_extension)
+                elif checkFileType(file_extension, VIDEO_EXTENSIONS):
+                    new_destination = getNewDestination(
+                        '/Videos', folder_to_track, fileName, file_extension)
                 elif checkFileType(file_extension, IGNORED_EXTENSIONS):
                     break
                 else:
