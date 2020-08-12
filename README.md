@@ -41,4 +41,4 @@ python3 file-organizer.py
 ```
 
 [instagram]: https://instagram.com/alevidalsanchez
-[linkedin]: linkedin.com/in/alejandro-vidal-sanchez
+[linkedin]: https://linkedin.com/in/alejandro-vidal-sanchez
