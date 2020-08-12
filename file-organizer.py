@@ -26,7 +26,7 @@ class MyHandler(FileSystemEventHandler):
                 fileName, file_extension = os.path.splitext(file)
                 if checkFileType(file_extension, IMAGE_EXTENSIONS):
                     new_destination = getNewDestination(
-                        '/Imágenes', folder_to_track, fileName, file_extension)
+                        '/Images', folder_to_track, fileName, file_extension)
                 elif checkFileType(file_extension, PDF_EXTENSIONS):
                     new_destination = getNewDestination(
                         '/Pdfs', folder_to_track, fileName, file_extension)
@@ -39,11 +39,14 @@ class MyHandler(FileSystemEventHandler):
                 elif checkFileType(file_extension, VIDEO_EXTENSIONS):
                     new_destination = getNewDestination(
                         '/Videos', folder_to_track, fileName, file_extension)
+                elif checkFileType(file_extension, COMPRESSED_EXTENSIONS):
+                    new_destination = getNewDestination(
+                        '/Compressed', folder_to_track, fileName, file_extension)
                 elif checkFileType(file_extension, IGNORED_EXTENSIONS):
                     break
                 else:
                     new_destination = getNewDestination(
-                        '/Otros', folder_to_track, fileName, file_extension)
+                        '/Others', folder_to_track, fileName, file_extension)
                 os.rename(src, new_destination)
 
 
